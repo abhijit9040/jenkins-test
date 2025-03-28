@@ -3,7 +3,9 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                git url: 'https://github.com/abhijit9040/jenkins-test.git', branch: 'master'
+                git url: 'https://github.com/abhijit9040/Test2', branch: 'master'
+                echo 'checkout completed'
+                
             }
         }
         stage('build'){
@@ -20,6 +22,6 @@ pipeline{
             steps{
                 echo 'deploy completed'
             }
-        }
-    }
+        }
+    }
 }
