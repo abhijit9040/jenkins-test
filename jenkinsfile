@@ -1,11 +1,33 @@
-pipeline {
+pipeline{
     agent any
+    stages('Checkout'){
+        git url:'https://github.com/abhijit9040/Test2.git', branch: 'main'
 
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
+    }
+
+stage('Build '){
+    steps{
+        script{
+            echo 'Building..'
+            
         }
     }
+    
+}
+stage('Test'){
+    steps{
+        script{
+            echo 'Testing..'
+            
+        }
+    }
+stage('Deploy'){
+    steps{
+        script{
+            echo 'Deploying..'
+            
+        }
+    }
+}
+}
 }
