@@ -1,18 +1,21 @@
-pipeline 
-agent any 
-tools{
-    maven 'maven'  // name of maven installation in Jenkins
-}
-stages{
-    stage("Build"){
-        steps{
-            sh 'mvn clean package'
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'  // Name of Maven installation in Jenkins
+    }
+
+    stages {
+        stage("Build") {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        
+        stage("Test") {
+            steps {
+                sh 'mvn test'
+            }
         }
     }
-    stage("Test"){
-        steps{
-            sh 'mvn test'
-        }
-    }
-   
 }
